@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  coffee-shop:
+    build: .
+    container_name: coffee-shop
+    ports:
+      - 8081:8080 
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/coffee_shop
+      - SPRING_DATASOURCE_USERNAME=telexar
+      - SPRING_DATASOURCE_PASSWORD=telexar123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+          
+  db:
+    image: "postgres:15-alpine3.17"
+    container_name: db
+    environment:
+      - POSTGRES_USER=telexar
+      - POSTGRES_PASSWORD=telexar123
+     
