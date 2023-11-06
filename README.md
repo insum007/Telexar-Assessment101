@@ -1,8 +1,8 @@
 ## Telexar-Assessment101
 
 ### 01. Coffe-shop Service 
-
-#### ex: localhost:8086/coffee-shop/add 
+Rest Endpoits
+#### POST: localhost:8086/coffee-shop/add 
 #### payload: 
   {
     "location": "Kandy",
